@@ -1,0 +1,7 @@
+[Unit]
+Description=Assigns an ipv4LL address on the given interface
+
+[Service]
+ExecStart=/usr/sbin/avahi-autoipd %I
+ExecStop=/usr/sbin/avahi-autoipd -k %I
+

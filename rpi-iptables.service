@@ -1,0 +1,9 @@
+[Unit]
+Description=Set up iptables NAT rules when Raspberry Pi 0 is plugged in
+BindsTo=sys-subsystem-net-devices-rpi0.device
+
+[Service]
+ExecStart=/sbin/iptables -t nat -A POSTROUTING -o wlo1 -j MASQUERADE
+ExecStop=/sbin/iptables -t nat -F
+Type=oneshot
+RemainAfterExit=yes

@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", SUBSYSTEMS=="usb", ATTRS{idProduct}=="a4a2", ATTRS{idVendor}=="0525", NAME="rpi0"
+SUBSYSTEM=="net", SUBSYSTEMS=="usb", NAME=="rpi0", ENV{SYSTEMD_WANTS}="avahi-autoipd@$name.service rpi-iptables.service"
